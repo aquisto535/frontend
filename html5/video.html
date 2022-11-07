@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>비디오</title>
+  </head>
+  <body>
+    <!--  <video src="../Triangles_01.mp4" type="video/mp4" controls="controls"></video> -->
+    <video src="../Triangles_01.mp4" type="video/mp4" id="vod"></video>
+    <button onclick="vodPlay()">재생</button>
+    <button onclick="vodPause()">일시정지</button>
+    볼륨: <input type="range" id="volumecontrol" max="1" step="any" onchange="updateVolume()" />
+    <script>
+      var vodObj = document.getElementById("vod");
+      
+      function vodPlay() {
+        vodObj.play();
+      }
+
+      function vodPause() {
+        vodObj.pause();
+      }
+
+      function updateVolume()
+      {
+        var volumeObj = document.getElementById("volumecontrol")
+        vod.volume = volumeObj.value;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체</title>
+  </head>
+  <body>
+    <script>
+      var cdate = new Date();
+
+      //   document.write("오늘의 날짜는 ");
+      //   document.write((cdate.getYear() + 1900 )+ '년');
+      //   document.write((cdate.getMonth() + 1 )+ '월');
+      //   document.write((cdate.getDate()) + '일 <br/>');
+
+      // document.write("현재 시간은 ");
+      //   document.write((cdate.getHours() + '시'));
+      //   document.write((cdate.getMinutes() + 1) + '분');
+      //   document.write((cdate.getSeconds() + '초 <br/>'));
+
+      //   var str1 = "사람이 ";
+      //   var str2 = "아니므니다";
+      //   var result = str1 + str2;
+      //   alert(result);
+
+      //   var str1 = "은하철도 ";
+      //   var num = "999";
+      //   var result = str1 + num;
+      //   alert(result);
+
+      //alert("안녕하세요?" == "안녕하세요!");
+      //alert("8293" == 8293);
+
+      let month = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+
+      //   alert(month[9]);
+      //   alert(month[0]);
+      //   month.push(13);
+      //   alert(month[12]);
+
+      //   for (let i = 0; i < month.length; i++) {
+      //     document.write(month[i] + "월<br/>");
+      //   }
+      //   let major = new Array("컴퓨터공학", "전자공학", "제어예측");
+      //   let minor = new Array("국문학", "영문학", "경영학");
+
+      //   let total = major.concat(minor);
+      //   let retreverse = total.reverse();
+      //   let sortnum = retreverse.sort(function (left, right) {
+      //     return left - right; //오름차순
+      //   });
+
+      //   document.write("전공/부전공 리스트 : " + total + "<br/>");
+      //   document.write("전공/부전공 리스트 : " + retreverse + "<br/>");
+      //   document.write("월별 리스트 정렬 : " + sortnum + "<br/>");
+
+      // let myAdd = new Function("x, y", "return(x + y)");
+      // document.write("result = " + myAdd(1, 2));
+
+      // number() 객체
+
+      var str1 = "8293";
+      var str2 = "abc";
+      var objnum = new Number("1234"); //생성자 함수 오버로딩
+      var num = 1234;
+
+      document.write("문자열" + "숫자형 : " + (str1 + num) + "<br/>");
+      document.write("object" + "숫자형 : " + (objnum + num) + "<br/>");
+      document.write("Number(문자열)" + "숫자형 : " + Number(str1) + "<br/>");
+      document.write("Number(문자열)" + "숫자형 : " + Number(str2) + "<br/>");
+    </script>
+  </body>
+</html>

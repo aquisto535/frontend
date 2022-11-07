@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>타이머</title>
+  </head>
+  <body onload="myload()" onresize="myblur()">
+    <!--  <script>
+      var timeid;
+      function timestart() {
+        alert("5초 후에 폭탄이 폭발합니다.");
+        timeid = window.setTimeout(function () {
+          alert("boom!");
+        }, 5000);
+      }
+
+      function timestop() {
+        window.clearTimeout(timeid);
+        alert("폭탄이 제거되었습니다");
+      }
+    </script>
+    <button onclick="timestart()">핵 폭탄 설정</button>
+    <button onclick="timestop()">핵 폭탄 해제</button>
+-->
+
+    <!--
+
+<script>
+      var timeid;
+      var count = 0;
+      function timestart() {
+        timeid = window.setInterval(function () {
+          document.getElementById("result").innerHTML = count++; //count = count + 1
+        }, 100);
+      }
+
+      function timestop() {
+        window.clearInterval(timeid);
+      }
+    </script>
+
+    <button onclick="timestart()">카운트 시작</button>
+    <button onclick="timestop()">카운트 해제</button><br />
+    <h1><div id="result"></div></h1>
+
+-->
+
+    <script>
+      function myload() {
+        alert("문서를 로드하였습니다");
+      }
+
+      function myblur() {
+        alert("크기를 변경하였습니다");
+      }
+    </script>
+    <h1>객체에서 제공하는 이벤트입니다</h1>
+  </body>
+</html>

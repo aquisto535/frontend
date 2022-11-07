@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폼 객체</title>
+  </head>
+  <body>
+    <form name="test">
+      아이디 : <input type="text" name="text1" value="첫번째 버튼" name="id" />
+      <br />
+      비밀번호 :
+      <input
+        type="text"
+        name="text2"
+        value="등록하기"
+        name="pw"
+        onclick="register()"
+      />
+      <br />
+      <input type="reset" name="reset" value="전체 선택" />
+      <input type="submit" name="submit" value="다시 작성" /><br />
+    </form>
+
+    <script>
+      function register() {
+        if (document.test.id.value == "") {
+          alert("아이디를 입력하세요");
+        } else if (document.test.pw.value == "") {
+          alert("비밀번호를 입력하세요");
+        } else {
+          alert("회원가입을 축하합니다.");
+        }
+      }
+
+      function rewrite() {}
+    </script>
+  </body>
+</html>

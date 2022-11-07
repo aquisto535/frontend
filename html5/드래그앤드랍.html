@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>드래그앤드랍</title>
+    <style>
+      #box1,
+      #box2,
+      #box3 {
+        width: 75px;
+        height: 70px;
+        padding: 5px;
+        margin: 5px;
+      }
+
+      #target {
+        width: 500px;
+        height: 200px;
+        padding: 5px;
+        margin: 5px;
+        border: 3px solid;
+        background-color: gray;
+      }
+
+      #box1 {
+        background-color: red;
+      }
+      #box2 {
+        background-color: greenyellow;
+      }
+      #box3 {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>draggable 속성 설정 테스트</h2>
+    <div id="box" ondrop="drop(event)" ondragover="dragover(event)">
+      <div id="box1" draggable="true" ondragstart="dragstart(event)"></div>
+      <div id="box2"></div>
+      <div id="box3"></div>
+    </div>
+
+    <div
+      id="target"
+      draggable="true"
+      ondrop="drop(event)"
+      ondragover="dragover(event)"
+    ></div>
+    <div id="result"></div>
+    <script>
+      function dragstart(e) {
+        console.log(e);
+        e.dataTransfer.setData("Text", e.target.id);
+      }
+
+      function dragover(e) {
+        document.getElementById("result").innerHTML =
+          "target영역 위에 있습니다.";
+        e.preventDefault();
+      }
+
+      function drop(e) {
+        let target_id = e.target.getAttribute("id");
+        let box_id = e.dataTransfer.getData("Text");
+        e.target.appendChild(document.getElementById(box_id));
+
+        console.log(target_id, box_id);
+
+        if (target_id === "target") {
+          alert("target에 드롭되었습니다.");
+        } else {
+          alert("원래 영역에 드롭되었습니다");
+          e.preventDefault();
+        }
+      }
+    </script>
+  </body>
+</html>

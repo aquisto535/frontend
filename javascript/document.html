@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>도큐먼트 객체</title>
+  </head>
+  <body>
+    <!-- <script>
+      var colorObj;
+
+      function backColor() {
+        colorObj = document.getElementById("colorValue");
+        document.bgColor = colorObj.value;
+      }
+
+      function textColor() {
+        colorObj = document.getElementById("colorValue");
+        document.fgColor = colorObj.value;
+      }
+    </script>
+    <h1>배경색과 글자색을 변경합니다</h1>
+    색상 입력 : <input type="text" id="colorValue" value="black" /> <br />
+    <button onclick="backColor()">배경색 변경하기</button>
+    <button onclick="textColor()">글자색 변경하기</button> -->
+
+    <!-- <script>
+      var docObj;
+
+      function changeTitle() {
+        docObj = document.getElementById("titleValue");
+        document.title = docObj.value;
+      }
+
+      function printInfo() {
+        alert("문서가 최근 바뀐 날짜 :" + document.lastModified + "<br/>");
+        alert("현재 url :" + document.URL + "<br/>");
+        alert("문서 제목 :" + document.title + "<br/>");
+      }
+    </script>
+    <h1>문서 타이틀 변경 및 문서 정보 출력하기</h1>
+    타이틀 입력 : <input type="text" id="titleValue" value="새문서" /> <br />
+    <button onclick="changeTitle()">타이틀 변경하기</button>
+    <button onclick="printInfo()">문서정보 출력하기</button> -->
+    <script>
+      var docObj;
+
+      function newOpen() {
+        newWIN = window.open("", "", "width = 350, height = 600");
+        newWIN.document.write("<h1>베스트셀러</h1>");
+        newWIN.document.write(
+          "<img src ='https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png' width=300 height=460>"
+        );
+      }
+
+      function printInfo() {
+        alert("문서가 최근 바뀐 날짜 :" + document.lastModified + "<br/>");
+        alert("현재 url :" + document.URL + "<br/>");
+        alert("문서 제목 :" + document.title + "<br/>");
+      }
+    </script>
+    <h1>문서 타이틀 변경 및 문서 정보 출력하기</h1>
+    타이틀 입력 : <input type="text" id="titleValue" value="새문서" /> <br />
+    <button onclick="newOpen()">새 문서 열기</button>
+    <button onclick="newClear()">문서 지우기</button>
+  </body>
+</html>

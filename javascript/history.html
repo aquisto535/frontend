@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>History</title>
+  </head>
+  <body>
+    <script>
+      function historycount() {
+        var urlCount = history.length;
+        document.write(
+          "현재까지 방문횟수는 " + urlCount + "군데 입니다" + "<br/>"
+        );
+      }
+
+      function goBack() {
+        history.back();
+      }
+
+      function goForward() {
+        history.forward();
+      }
+    </script>
+    <button onclick="historycount()">방문횟수</button>
+    <button onclick="goBack()">뒤로</button>
+    <button onclick="goForward()">앞으로</button>
+  </body>
+</html>

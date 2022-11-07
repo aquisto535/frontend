@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오디오</title>
+  </head>
+  <body>
+    <!--<audio src="../SleepAway.mp3" type="audio/mp3" controls="controls" autoplay="autoplay"></audio>-->
+    <audio src="../SleepAway.mp3" type="audio/mp3" id="music"></audio>
+    <button onclick="musicPlay()">재생</button>
+    <button onclick="musicPause()">일시정지</button><br />
+    <div id="time"></div>
+    <script>
+      var musicobj = document.getElementById("music");
+
+      function musicPlay() {
+        musicobj.play();
+      }
+
+      function musicPause() {
+        musicobj.pause();
+      }
+
+      musicobj.addEventListener(
+        "timeupdate",
+        () => {
+          var timeObj = document.getElementById("time");
+          timeObj.innerHTML =
+            Math.floor(musicobj.currentTime) +
+            "/" +
+            Math.floor(music.duration) +
+            "초";
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>윈도우 객체</title>
+  </head>
+  <body>
+    <script>
+      let newWin;
+      function newOpen() {
+        newWin = window.open("객체.html", "", "width = 600, height = 300");
+      }
+
+      function winclose() {
+        window.close();
+      }
+
+      function moveDoc() {
+        location.replace("error.html");
+      }
+    </script>
+    <button onclick="newOpen()">새 윈도우 열기</button><br />
+    <button onclick="winclose()">새 윈도우 닫기</button><br />
+    <button onclick="moveDoc()">에러 화면 들어가기</button><br />
+  </body>
+</html>

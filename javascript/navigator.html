@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigator</title>
+  </head>
+  <body>
+    <script>
+      //   document.write("appcodeName : " + navigator.appCodeName + "<br/>");
+      //   document.write("appName : " + navigator.appName + "<br/>");
+      //   document.write("appVersion : " + navigator.appVersion + "<br/>");
+      //   document.write("platform : " + navigator.platform + "<br/>");
+      //   document.write("userAgent : " + navigator.userAgent + "<br/>");
+
+      var agent = navigator.userAgent.toLowerCase();
+
+      if (agent.indexOf("chrome") != -1) {
+        document.write("<h1>크롬 브라우저입니다</h1>");
+      } else if (agent.indexOf("firefox") != -1) {
+        document.write("<h1>파이어폭스 브라우저입니다</h1>");
+      }
+    </script>
+  </body>
+</html>

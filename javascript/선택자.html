@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>선택자</title>
+  </head>
+  <body>
+    <h1>배경색이 변경됩니다</h1>
+    <input
+      type="button"
+      value="red"
+      id="bgc"
+      onclick=" if(document.querySelector('#bgc').value == 'red') {
+        document.querySelector('body').style.backgroundColor = 'blue'
+        document.querySelector('body').style.Color = '#fff'
+        document.querySelector('#bgc').value = 'blue'
+    } else{
+        document.querySelector('body').style.backgroundColor = 'red'
+        document.querySelector('body').style.Color = '#fff'
+        
+        document.querySelector('#bgc').value = 'red'
+    }
+    
+    "
+    />
+  </body>
+</html>

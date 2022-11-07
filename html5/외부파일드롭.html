@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>외부파일 드롭</title>
+    <style>
+      #droparea {
+        width: 1024px;
+        height: 768px;
+        border: 5px solid black;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>이미지 요소 드래그 앤 드롭</h1>
+    <div
+      id="droparea"
+      ondragover="dragover(event)"
+      ondrop="drop(event)"
+      ondragenter="dragenter(event)"
+    ></div>
+    <script>
+      let droparea = document.getElementById("droparea");
+      let dropImage = document.createElement("img");
+
+      function dragover(e) {
+        e.preventDefault();
+      }
+
+      function drop(e) {
+        let file = e.dataTransfer.files[0];
+        let reader = new FileReader();
+
+        reader.onload = (function (theFile) {
+          return function (e) {
+            alert("ondrop");
+            dropImage.src = e.target.result;
+            droparea.appendChild(dropImage);
+          };
+        })(file);
+
+        reader.readAsDataURL(file);
+
+        e.stopPropagation();
+        e.preventDefault();
+      }
+    </script>
+  </body>
+</html>

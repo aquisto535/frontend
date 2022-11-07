@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>브라우저 객체</title>
+  </head>
+  <body onload="myLoad()">
+    <script>
+      // document.write("<h1>" + location.protocol + "</h1><br/>");
+      // document.write("<h1>" + location.host + "</h1><br/>");
+      // document.write("<h1>" + location.hostname + "</h1><br/>");
+      // document.write("<h1>" + location.href + "</h1><br/>");
+      // document.write("<h1>" + location.pathname + "</h1><br/>");
+      // document.write("<h1>" + location.port + "</h1><br/>");
+      //   function changeAddr() {
+      //     var locationProp = location.href;
+      //     document.getElementById("result").innerHTML =
+      //       "현재 url은" + locationProp + "입니다";
+      //   }
+      //   function myLoad() {
+      //     location.href ="https://www.daum.net"
+      //   }
+      //
+
+      var currentTime = new Date();
+      document.write(
+        "<h1> 현재 시간은 " +
+          currentTime.toLocaleString() +
+          "입니다. <h1/><br/>"
+      );
+
+      function updateDoc() {
+        location.reload();
+      }
+      function moveDoc() {
+        location.replace("객체.html");
+      }
+
+      function moveLoc() {
+        location.replace("error.html");
+      }
+    </script>
+    <button onclick="updateDoc()">새로고침</button>
+    <button onclick="moveDoc()">문서 이동</button>
+    <button onclick="moveLoc()">에러 화면 들어가기</button><br />
+  </body>
+</html>

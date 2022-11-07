@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" onchange="alert('아이디가 변경되었습니다.')" />
+      <input type="button" value="버튼" id="myid" />
+    </form>
+    <script>
+      // let element = document.getElementById("myid");
+
+      // element.onclick = function () {
+      //   alert("첫번째 메세지입니다");
+      // };
+
+      // element.onclick = function () {
+      //   alert("두번째 메세지입니다");
+      // };// 두번째만 실행됨. 맨 마지막 함수만 인식.
+
+      var element = document.getElementById("myid");
+      element.addEventListener("click", function () {
+        alert("첫번째 메세지입니다");
+      });
+
+      var element = document.getElementById("myid");
+      element.addEventListener("click", function () {
+        alert("두번째 메세지입니다");
+      });
+    </script>
+  </body>
+</html>

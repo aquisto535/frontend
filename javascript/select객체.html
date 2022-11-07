@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>select객체</title>
+  </head>
+  <body>
+    <h2>가볼만한 사이트</h2>
+    <form name="test">
+      <select name="page" onchange="loadPage()" onfocus="alertMessage()">
+        <option value="#">사이트 선택</option>
+        <option value="https://www.whitehouse.gov/">백악관</option>
+        <option value="https://www.biff.kr/kor/">부산국제영화제</option>
+        <option value="https://www.nasa.gov/">나사</option>
+      </select>
+    </form>
+    <script>
+      function loadPage() {
+        var obj = document.test.page;
+
+        location.href = obj.options[obj.selectedIndex].value;
+      }
+
+      function alertMessage() {
+        //alert("포커싱 되었습니다");
+        console.log("포커싱 되었습니다");
+      }
+    </script>
+  </body>
+</html>
