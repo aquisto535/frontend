@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temp</title>
+  </head>
+  <body>
+    <script>
+      // let user = {
+      //   name: "john",
+      //   age: 30,
+      //   say(name) {
+      //     this.name;
+      //     alert(this.name);
+      //   },
+      // };
+
+      // let admin = user;
+
+      // user = null;
+
+      // console.log(user, admin); //admin은 user값 변화에 영향이 없음.
+
+      //자유로운 this
+
+      // let user = { name: "john" };
+      // let admin = { name: "admin" };
+
+      // function say() {
+      //   alert(this.name);
+      // }
+
+      // user.age = 25;
+      // user.func = say;
+      // admin.func = say;
+
+      // // user.func(); //this == user
+      // // admin.func(); // this == admin
+
+      // user["func"](); //key로 값 출력.
+      // admin["func"]();
+
+      //화살표 안에서의 this: 자신의 함수 상위의 this(객체)
+      // let user = {
+      //   name: "john",
+      //   say() {
+      //     let arrow = () => {
+      //       alert(this.name);
+      //     };
+      //     arrow();
+      //   },
+      // };
+
+      // user.say();
+    </script>
+  </body>
+</html>
