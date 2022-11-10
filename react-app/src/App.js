@@ -1,16 +1,17 @@
 import "./App.css";
+import MySubject from "./mysubject";
+import MyContent from "./mycontent";
+import MyTopic from "./mytopic";
 
 //JSX
 function App() {
-  const name = "리액트";
-
   return (
     <>
-      {/* 주석을 작성합니다. JSX 주석입니다. */}
-      <div classname="test">{name}</div>
-      <input />
-      <br />
-      <p />
+      {/* <Mycomponent name="React">자바스크립트</Mycomponent> */}
+
+      <MySubject title="Node.js" sub="server side web"></MySubject>
+      <MyContent title="Node.js" desc="Node.js is good"></MyContent>
+      <MyTopic></MyTopic>
     </>
   );
 }

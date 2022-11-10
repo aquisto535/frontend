@@ -54,6 +54,84 @@
       // };
 
       // user.say();
+
+      //배열 분해, 구조 분해 할당.
+      // let arr = ["wjdxoals", "qwerty"];
+
+      //arr[0], arr[1];
+      // let [a, , b, c, d] =
+      //   "우리가 보는 웹페이지가 어떻게 달라지는지 알아볼까요?".split(" "); // 내가 필요로 하는 정보만 저장 가능.
+
+      // alert(a);
+      // alert(b);
+      // alert(c);
+      // alert(d);
+
+      // let [a, b, c] = "abc";
+      // alert(a);
+      // alert(b);
+      // alert(c);
+
+      //entries() 함수 사용, key-value 형식으로 출력 가능
+
+      // let user = {
+      //   name: " lch",
+      //   age: 20,
+      // };
+
+      // for (let [key, value] of Object.entries(user)) {
+      //   alert(`${key} : ${value}`);
+      // }
+
+      // ... 나머지 요소 가져오기. 나머지 요소들을 배열로 만듦.rest말고 다른 이름도 가능.
+      // let [name1, name2, ...rest] = ["a", "b", "c", "d", "e", "f", "g"];
+
+      // alert(rest[0]);
+      // alert(rest[1]);
+      // alert(rest[2]);
+      // alert(rest.length);
+
+      // 구조분해 할당웍 기본값
+      // let [firstname = "jung", surname = "taemin"] = ["jeon"];
+      // alert(firstname);
+      // alert(surname);
+
+      //객체 분해
+      // let options = {
+      //   title: "menu",
+      //   width: 100,
+      //   height: 200,
+      // };
+
+      // let { title, ...rest } = options;
+
+      // alert(title);
+      // alert(rest.width)
+      // alert(rest.height)
+
+      //JSON.stringify
+
+      // let user = {
+      //   name: " lch",
+      //   age: 20,
+      //   isadmin: false,
+      //   course: ["자바스크립트", "node.js", "react"],
+      // };
+
+      // let json = JSON.stringify(user);
+
+      //JSON.parse
+
+      let numbers = "[0, 1, 2, 3]";
+
+      alert(numbers);
+
+      let obj = JSON.parse(numbers); // obj ==> [0, 1,2,3]
+
+      alert(obj[0]);
+      alert(obj[1]);
+      alert(obj[2]);
+      alert(obj[3]);
     </script>
   </body>
 </html>
