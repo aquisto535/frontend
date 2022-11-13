@@ -8,6 +8,8 @@ img1 = new Image();
 img1.src = "./catus.jpg";
 img2 = new Image();
 img2.src = "./dino.png";
+img3 = new Image();
+img3.src = "./bird.jpg";
 
 //ctx.drawImage();
 
@@ -24,20 +26,30 @@ let dino = {
     ctx.drawImage(img2, this.x, this.y, this.width, this.height);
   },
 };
-dino.x += 1;
+//dino.x += 1;
 
 //선인장 객체
 class Catus {
   constructor() {
-    this.x = 1200;
+    this.x = 800;
     this.y = 300;
     this.width = 50;
     this.height = 50;
   }
   draw() {
-    ctx.fillStyle = "red";
-    //ctx.fillRect(this.x, this.y, this.width, this.height);
     ctx.drawImage(img1, this.x, this.y, this.width, this.height);
+  }
+}
+
+class Bird {
+  constructor() {
+    this.x = 800;
+    this.y = 235;
+    this.width = 50;
+    this.height = 50;
+  }
+  draw() {
+    ctx.drawImage(img3, this.x, this.y, this.width, this.height);
   }
 }
 
@@ -67,6 +79,7 @@ class Line {
 
 let timer = 0;
 let catuses = [];
+let birds = [];
 let jump_timer = 0;
 let onJump = false;
 let animation;
@@ -86,9 +99,14 @@ function runByFrame() {
   drawscore();
 
   //일정주기마다 장애물 생성
-  if (timer % 300 == 0) {
+  if (timer % 100 == 0) {
     let catus = new Catus();
     catuses.push(catus); // 장애물 여러개 생성 후 관리하기.
+  }
+
+  if (timer % 400 == 0) {
+    let bird = new Bird();
+    birds.push(bird);
   }
 
   catuses.forEach((a, i, o) => {
@@ -96,12 +114,24 @@ function runByFrame() {
     if (a.x < 0) {
       o.splice(i, 1);
     }
-    a.x--;
+    a.x -= 2;
 
     crash(dino, a); //공룡과 모든 장애물 충돌 체크
 
     a.draw();
   }); // 장애물 여러 개 생성.
+
+  birds.forEach((a, i, o) => {
+    //x좌표가 0미만이면 제거
+    if (a.x < 0) {
+      o.splice(i, 1);
+    }
+    a.x -= 4;
+
+    crash(dino, a); //공룡과 모든 장애물 충돌 체크
+
+    a.draw();
+  });
 
   //스페이스 누를 시 점프 코드
   if (onJump == true) {
@@ -109,7 +139,9 @@ function runByFrame() {
     jump_timer++;
   }
 
-  if (jump_timer > 50) {
+  // 점프 높이 및 연속 점프 제한
+
+  if (jump_timer > 35 || dino.y <= 235) {
     onJump = false;
   }
 
@@ -138,11 +170,16 @@ function runByFrame() {
 
 //충돌 확인
 
-function crash(dino, catus) {
-  let x_differ = catus.x - (dino.x + dino.width); // 대상의 x좌표는 맨왼쪽에 있음.너비 더해주는 이유.
-  let y_differ = catus.y - (dino.y + dino.height);
+function crash(dino, object) {
+  let cx = object.x;
+  let cy = object.y;
 
-  if (x_differ < 0 && y_differ < 0) {
+  if (
+    cx > dino.x - dino.width / 2 &&
+    cx < dino.x + dino.width / 2 &&
+    cy > dino.y - dino.height / 2 &&
+    cy < dino.y + dino.height / 2
+  ) {
     cancelAnimationFrame(animation);
     ctx.fillStyle = "red";
     ctx.font = "60px";
