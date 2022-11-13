@@ -26,7 +26,7 @@ let dino = {
     ctx.drawImage(img2, this.x, this.y, this.width, this.height);
   },
 };
-//dino.x += 1;
+
 
 //선인장 객체
 class Catus {
