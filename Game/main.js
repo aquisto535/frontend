@@ -27,7 +27,6 @@ let dino = {
   },
 };
 
-
 //선인장 객체
 class Catus {
   constructor() {
@@ -175,10 +174,10 @@ function crash(dino, object) {
   let cy = object.y;
 
   if (
-    cx > dino.x - dino.width / 2 &&
-    cx < dino.x + dino.width / 2 &&
-    cy > dino.y - dino.height / 2 &&
-    cy < dino.y + dino.height / 2
+    cx > dino.x - dino.width / 1.5 &&
+    cx < dino.x + dino.width / 1.5 &&
+    cy > dino.y - dino.height / 1.5 &&
+    cy < dino.y + dino.height / 1.5
   ) {
     cancelAnimationFrame(animation);
     ctx.fillStyle = "red";
