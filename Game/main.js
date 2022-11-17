@@ -174,10 +174,10 @@ function crash(dino, object) {
   let cy = object.y;
 
   if (
-    cx > dino.x - dino.width / 1.5 &&
-    cx < dino.x + dino.width / 1.5 &&
-    cy > dino.y - dino.height / 1.5 &&
-    cy < dino.y + dino.height / 1.5
+    cx > dino.x - dino.width / 1.4 &&
+    cx < dino.x + dino.width / 1.4 &&
+    cy > dino.y - dino.height / 1.4 &&
+    cy < dino.y + dino.height / 1.4
   ) {
     cancelAnimationFrame(animation);
     ctx.fillStyle = "red";
