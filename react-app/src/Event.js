@@ -1,40 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Event extends Component {
-  state = {
-    msg: "",
+function Event() {
+  const [counter, setcounter] = React.useState(0); //useState()는 배열에서 초기값과 그것을 수정할 함수를 인자로 받는다!!
+  // 구조 분해 시키는 이유: 각 배열의 값들에게 새로운 변수명을 주기 위해서
+
+  const onClick = () => {
+    //setcounter(counter + 1);
+    setcounter((current) => current + 1); //이 방법이 더 안전함.current가 현재 값임을 보장함!!
   };
 
-  render() {
-    return (
-      <div>
-        <h1>이벤트 연습</h1>
-        <input
-          type="text"
-          name="msg"
-          placeholder="아무거나"
-          onChange={(e) => {
-              console.log(e.target.value);
-              this.setState({
-                  msg: e.target.value
-                
-              })
-          }}
-          value={this.state.msg}
-        ></input>
-        <button
-          onClick={() => {
-            alert(this.state.msg);
-            this.setState({
-              msg: "",
-            });
-          }}
-        >
-          확인
-        </button>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h3>Total clicks : {counter} </h3>
+      <button onClick={onClick}>Click Me</button>
+    </div>
+  );
 }
 
 export default Event;

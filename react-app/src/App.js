@@ -11,7 +11,9 @@ import Event from "./Event";
 const App = () => {
   return (
     <>
-      <Event></Event>
+      <Event>
+        
+      </Event>
     </>
   );
 };
