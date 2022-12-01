@@ -1,18 +1,49 @@
 import React from "react";
 
 function Event() {
-  const [counter, setcounter] = React.useState(0); //useState()는 배열에서 초기값과 그것을 수정할 함수를 인자로 받는다!!
-  // 구조 분해 시키는 이유: 각 배열의 값들에게 새로운 변수명을 주기 위해서
+  const [amount, setamount] = React.useState(); //setState는
+  const [flipped, setflipped] = React.useState(false);
 
-  const onClick = () => {
-    //setcounter(counter + 1);
-    setcounter((current) => current + 1); //이 방법이 더 안전함.current가 현재 값임을 보장함!!
+  const onChange = (event) => {
+    setamount(event.target.value);
+  };
+
+  const reset = () => setamount(0);
+
+  const onflip = () => {
+    reset();
+    setflipped((current) => !current);
   };
 
   return (
     <div>
-      <h3>Total clicks : {counter} </h3>
-      <button onClick={onClick}>Click Me</button>
+      <h1 className="">Super Converter</h1>
+      <div>
+        {/* jsx에선 for를 htmlFor로 써야함. class도 className으로 써야 */}
+        <label htmlFor="Minutes">Minutes</label>
+        <input
+          placeholder="Minutes"
+          type="number"
+          id="Minutes"
+          value={flipped ? amount * 60 : amount}
+          onChange={onChange}
+          disabled={flipped}
+        ></input>
+      </div>
+
+      <div>
+        <label htmlFor="Hours">Hours 안녕하세요</label>
+        <input
+          placeholder="Hours"
+          type="number"
+          id="Hours"
+          value={flipped ? amount : Math.round(amount / 60)}
+          onChange={onChange}
+          disabled={!flipped}
+        ></input>
+        <button onClick={reset}>Reset</button>
+        <button onClick={onflip}>Flip</button>
+      </div>
     </div>
   );
 }
