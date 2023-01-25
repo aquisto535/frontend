@@ -1,22 +1,70 @@
 import "./App.css";
-import { Component } from "react";
-import MySubject from "./mysubject";
-import MyContent from "./mycontent";
-import MyTopic from "./mytopic";
-import Counter from "./Counter";
-import Say from "./Say";
-import Event from "./Event";
+import React, { Component } from "react";
+import Customer from "./components/customer";
+// import MySubject from "./mysubject";
+// import MyContent from "./mycontent";
+// import MyTopic from "./mytopic";
+// import Counter from "./Counter";
+// import Say from "./Say";
+//import Event from "./Event";
 
 //JSX
-const App = () => {
-  return (
-    <>
-      <Event>
-        
-      </Event>
-    </>
-  );
-};
+// const App = () => {
+//   return (
+//  <Customer/>
+//   );
+// };
+
+const customers = [
+  {
+    id: 1,
+    Image: "https://placeimg.com/64/64/any",
+    name: "wjdxoals",
+    birthday: "960417",
+    gender: "male",
+    job: "job seeker",
+  },
+  {
+    id: 2,
+    Image: "https://placeimg.com/64/64/any",
+    name: "klopp",
+    birthday: "6958523",
+    gender: "male",
+    job: "manager",
+  },
+  {
+    id: 3,
+    Image: "https://placeimg.com/64/64/any",
+    name: "calmdown_man",
+    birthday: "78235656",
+    gender: "male",
+    job: "streamer",
+  },
+];
+
+class App extends Component {
+  render() {
+    return (
+      //하나의 요소만 덩그런히 있어서는 안됨. 감싸주는 대상이 있어야함.
+      //배열.map = 배열에 조건을 더해 전체 요소 출력할 때 사용. 요소를 구분하기 위해 key값을 주어야 함!
+      <div>
+        {customers.map((c) => {
+          return (
+            <Customer
+              key={c.id}
+              id={c.id}
+              Image={c.Image}
+              name={c.name}
+              birthday={c.birthday}
+              gender={c.gender}
+              job={c.job}
+            />
+          );
+        })}
+      </div>
+    ); //props을 통해 모듈에 데이터 전달
+  }
+}
 
 // 클래스형
 // class App extends Component {

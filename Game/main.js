@@ -9,7 +9,7 @@ img1.src = "./catus.jpg";
 img2 = new Image();
 img2.src = "./dino.png";
 img3 = new Image();
-img3.src = "./bird.jpg";
+img3.src = "./그림1.png";
 
 //ctx.drawImage();
 
