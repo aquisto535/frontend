@@ -1,6 +1,15 @@
 import "./App.css";
 import React, { Component } from "react";
 import Customer from "./components/customer";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableRow,
+  TableHead,
+  Paper,
+} from "@mui/material";
+
 // import MySubject from "./mysubject";
 // import MyContent from "./mycontent";
 // import MyTopic from "./mytopic";
@@ -47,21 +56,36 @@ class App extends Component {
     return (
       //하나의 요소만 덩그런히 있어서는 안됨. 감싸주는 대상이 있어야함.
       //배열.map = 배열에 조건을 더해 전체 요소 출력할 때 사용. 요소를 구분하기 위해 key값을 주어야 함!
-      <div>
-        {customers.map((c) => {
-          return (
-            <Customer
-              key={c.id}
-              id={c.id}
-              Image={c.Image}
-              name={c.name}
-              birthday={c.birthday}
-              gender={c.gender}
-              job={c.job}
-            />
-          );
-        })}
-      </div>
+      <Paper>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>번호</TableCell>
+              <TableCell>이미지</TableCell>
+              <TableCell>이름</TableCell>
+              <TableCell>생년월일</TableCell>
+              <TableCell>성별</TableCell>
+              <TableCell>직업</TableCell>
+            </TableRow>
+          </TableHead>
+
+          <TableBody>
+            {customers.map((c) => {
+              return (
+                <Customer
+                  key={c.id}
+                  id={c.id}
+                  Image={c.Image}
+                  name={c.name}
+                  birthday={c.birthday}
+                  gender={c.gender}
+                  job={c.job}
+                />
+              );
+            })}
+          </TableBody>
+        </Table>
+      </Paper>
     ); //props을 통해 모듈에 데이터 전달
   }
 }
