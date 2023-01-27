@@ -24,34 +24,23 @@ import {
 //   );
 // };
 
-const customers = [
-  {
-    id: 1,
-    Image: "https://placeimg.com/64/64/any",
-    name: "wjdxoals",
-    birthday: "960417",
-    gender: "male",
-    job: "job seeker",
-  },
-  {
-    id: 2,
-    Image: "https://placeimg.com/64/64/any",
-    name: "klopp",
-    birthday: "6958523",
-    gender: "male",
-    job: "manager",
-  },
-  {
-    id: 3,
-    Image: "https://placeimg.com/64/64/any",
-    name: "calmdown_man",
-    birthday: "78235656",
-    gender: "male",
-    job: "streamer",
-  },
-];
-
 class App extends Component {
+  state = {
+    customers: "",
+  };
+
+  componentDidMount() {
+    this.callApi()
+      .then((res) => this.setState({ customers: res }))
+      .catch((err) => console.log(err));
+  }
+
+  callApi = async () => {
+    const response = await fetch("/api/customers");
+    const body = await response.json();
+    return body;
+  };
+
   render() {
     return (
       //하나의 요소만 덩그런히 있어서는 안됨. 감싸주는 대상이 있어야함.
@@ -70,23 +59,25 @@ class App extends Component {
           </TableHead>
 
           <TableBody>
-            {customers.map((c) => {
-              return (
-                <Customer
-                  key={c.id}
-                  id={c.id}
-                  Image={c.Image}
-                  name={c.name}
-                  birthday={c.birthday}
-                  gender={c.gender}
-                  job={c.job}
-                />
-              );
-            })}
+            {this.state.customers
+              ? this.state.customers.map((c) => {
+                  return (
+                    <Customer
+                      key={c.id}
+                      id={c.id}
+                      Image={c.Image}
+                      name={c.name}
+                      birthday={c.birthday}
+                      gender={c.gender}
+                      job={c.job}
+                    />
+                  );
+                })
+              : ""}
           </TableBody>
         </Table>
       </Paper>
-    ); //props을 통해 모듈에 데이터 전달
+    ); //props을 통해 모듈에 데이터 전달. 조건문 통해 this.state.customers확인하여 오류 메세지 출력 막음
   }
 }
 
